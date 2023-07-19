@@ -124,6 +124,7 @@ export default {
     const randIP = getRandomIP();
     // console.log('randIP : ', randIP);
     newHeaders.set('X-Forwarded-For', randIP);
+    newHeaders.set('Cookie', 'KievRPSSecAuth='+KievRPSSecAuth+';');
     const oldUA = request.headers.get('user-agent');
     const isMobile = oldUA.includes('Mobile') || oldUA.includes('Android');
     if (isMobile) {
